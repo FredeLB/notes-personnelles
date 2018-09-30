@@ -1,0 +1,130 @@
+@mixin flex($_g, $_s, $_b) {
+	flex-grow: $_g;
+	flex-shrink: $_s;
+	flex-basis: $_b;
+}
+
+@mixin clearfix {
+	&::after {
+		content: '';
+		display: block;
+		height: 0;
+		visibility: hidden;
+		clear: both;
+	}
+}
+
+@mixin bgCover($_pos:center) {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: $_pos;
+}
+
+@mixin longWordWrap {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+
+}
+
+
+// mixins de Jo
+@mixin pagePaddingLeft {
+	padding-left: 1rem;
+
+	@include breakpoint(md-up) {
+		padding-left: 2rem;
+	}
+
+	@include breakpoint(lg-up) {
+		padding-left: 4rem;
+	}
+
+	@include breakpoint(xlg-up) {
+		padding-left: 7.5rem;
+	}
+}
+
+@mixin pagePaddingRight {
+	padding-right: 1rem;
+
+	@include breakpoint(md-up) {
+		padding-right: 2rem;
+	}
+
+	@include breakpoint(lg-up) {
+		padding-right: 4rem;
+	}
+
+	@include breakpoint(xlg-up) {
+		padding-right: 7.5rem;
+	}
+}
+
+@mixin pagePaddingRightLarge {
+	padding-right: 1rem;
+
+	@include breakpoint(md-up) {
+		padding-right: 2rem;
+	}
+
+	@include breakpoint(lg-up) {
+		padding-right: 5.5rem;
+	}
+
+	@include breakpoint(xlg-up) {
+		padding-right: 7.5rem;
+	}
+}
+
+@mixin pagePadding() {
+	@include pagePaddingLeft();
+	@include pagePaddingRight();
+}
+
+@mixin pagePaddingLarge() {
+	@include breakpoint(md-up) {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	@include breakpoint(lg-up) {
+		padding-left: 6rem;
+		padding-right: 6rem;
+	}
+
+	@include breakpoint(xlg-up) {
+		padding-left: 12rem;
+		padding-right: 12rem;
+	}
+}
+
+
+//Mixin borders cta--rounded
+@mixin borderround($color, $thickness) {
+
+	border: $thickness solid $color;
+
+}
+
+@mixin divround($dimensions) {
+
+	border-radius: 50%;		
+	height: $dimensions;
+	width: $dimensions;
+
+}
+
+@mixin gradientBlue($deg) {
+	background: linear-gradient($deg + deg, $blue-gradient, $blue);
+}
+
+@mixin btest($color) {
+	border: 1px solid $color;
+}
+
+@mixin delaySliderNav($index) {
+	transition: transform $navAnimTiming ease-out $navAnimTiming*$navAnimDelay*$index, opacity $navAnimTiming linear $navAnimTiming*$navAnimDelay*$index;
+}
+
+

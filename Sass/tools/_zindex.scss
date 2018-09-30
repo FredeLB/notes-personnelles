@@ -1,0 +1,23 @@
+@mixin zindexContainer {
+	z-index: 50;
+}
+
+@mixin zindexBg {
+	z-index: 100;
+}
+
+@mixin zindexMid {
+	z-index: 500;
+}
+
+@mixin zindexTop1 {
+	z-index: 1000;
+}
+
+@mixin zindexTop2 {
+	z-index: 2000;
+}
+
+@mixin zindexTop3 {
+	z-index: 3000;
+}

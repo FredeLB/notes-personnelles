@@ -1,0 +1,142 @@
+// grid
+
+$gutter-width: 2rem;
+$gutter-width-small: 1.5rem;
+$gutter-width-large: 5rem;
+
+@mixin grid($prefix) {
+	&#{$prefix}12 { width: 100% }
+	&#{$prefix}11 { width: 91.66% }
+	&#{$prefix}10 { width: 83.33% }
+	&#{$prefix}9 { width: 75% }
+	&#{$prefix}8 { width: 66.66% }
+	&#{$prefix}7 { width: 58.33% }
+	&#{$prefix}6 { width: 50% }
+	&#{$prefix}5 { width: 41.66% }
+	&#{$prefix}4 { width: 33.33% }
+	&#{$prefix}3 { width: 25% }
+	&#{$prefix}2 { width: 16.66% }
+	&#{$prefix}1 { width: 8.33% }
+
+	&#{$prefix}offset-11 { margin-left: 91.66% }
+	&#{$prefix}offset-10 { margin-left: 83.33% }
+	&#{$prefix}offset-9 { margin-left: 75% }
+	&#{$prefix}offset-8 { margin-left: 66.66% }
+	&#{$prefix}offset-7 { margin-left: 58.33% }
+	&#{$prefix}offset-6 { margin-left: 50% }
+	&#{$prefix}offset-5 { margin-left: 41.66% }
+	&#{$prefix}offset-4 { margin-left: 33.33% }
+	&#{$prefix}offset-3 { margin-left: 25% }
+	&#{$prefix}offset-2 { margin-left: 16.66% }
+	&#{$prefix}offset-1 { margin-left: 8.33% }
+	&#{$prefix}offset-0 { margin-left: 0 }
+}
+
+.grid__row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -($gutter-width/2);
+	margin-right: -($gutter-width/2);
+
+	&--gutter-small {
+		margin-left: -($gutter-width-small/2);
+		margin-right: -($gutter-width-small/2);
+
+		[class*="grid__col"] {
+			padding: $gutter-width-small/2;
+		}
+	}
+
+	&--gutter-large {
+		margin-left: -($gutter-width-large/2);
+		margin-right: -($gutter-width-large/2);
+
+		[class*="grid__col"] {
+			padding: $gutter-width-large/2;
+		}
+	}
+
+	&--sa {
+		justify-content: space-around;
+	}
+
+	&--jcc {
+		justify-content: center;
+	}
+
+	&--aic {
+		align-items: center;
+	}
+
+	&--md-reverse {
+		@include breakpoint(md-up) {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+[class*="grid__col"] {
+	display: inline-block;
+	float: left; // If flexbox is not supported, float will apply. For <=IE9
+	width: 100%;
+	padding: $gutter-width/2;
+
+	&.grid__col--no-pad {
+		padding: 0;
+	}
+
+	&.grid__col--valign-children {
+
+		&-top {
+			display: inline-flex;
+			align-items: flex-start;
+			>div {
+				width: 100%;
+			}
+		}
+
+		&-middle {
+			display: inline-flex;
+			align-items: center;
+			>div {
+				width: 100%;
+			}
+		}
+
+		&-bottom {
+			display: inline-flex;
+			align-items: flex-end;
+			>div {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+.grid__col {
+
+	&--center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include grid("--");
+
+
+	@include breakpoint(sm-up) {
+		@include grid("--sm-");
+	}
+
+	@include breakpoint(md-up) {
+		@include grid("--md-");
+	}
+
+	@include breakpoint(lg-up) {
+		@include grid("--lg-");
+	}
+
+	@include breakpoint(xlg-up) {
+		@include grid("--xlg-");
+	}
+}

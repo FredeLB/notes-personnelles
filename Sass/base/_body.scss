@@ -1,0 +1,27 @@
+html {
+	height: 100%;
+
+}
+
+body {
+	position: relative;
+
+
+	&.noscroll {
+		overflow: hidden;
+	}
+}
+
+@include breakpoint(sm-down){
+	
+	html {
+		font-size: 15px;	
+	}
+}
+
+@include breakpoint(sm-up){
+	
+	html {
+		font-size: 16px;	
+	}
+}

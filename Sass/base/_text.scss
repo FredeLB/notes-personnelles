@@ -1,0 +1,113 @@
+
+// // text
+// @mixin markpro-book {
+//   font-family: 'MarkPro-Book', Helvetica, Arial, sans-serif;
+// }
+// @mixin markpro-bold {
+//   font-family: 'MarkPro-Bold', Helvetica, Arial, sans-serif;
+// }
+
+// @mixin markpro {
+// 	font-family: 'MarkPro', Helvetica, Arial, sans-serif;
+// }
+
+
+
+// body {
+// 	@include markpro-book;
+// }
+
+
+
+
+// p {
+// 	@include markpro-book;
+// 	color: $black;
+// 	font-size: rem(17);
+// 	font-stretch: normal;
+// 	line-height: 1.53;
+// 	letter-spacing: normal;
+
+// 	&.blue {
+// 		color: $blue;
+// 	}
+
+// 	&.caption {
+// 		font-size: rem(14);
+// 		font-style: normal;
+// 		font-stretch: normal;
+// 		line-height: 1.5;
+// 		letter-spacing: normal;
+// 		color: #737373;
+// 	}
+
+// 	&.center {
+// 		text-align: center;
+// 	}
+
+// 	&.citation {
+		
+// 		&::before,
+// 		&::after {
+// //			@include btest(red);
+// 			content: '“';
+// 			font-size: rem(24);	
+// 			margin-top: -1%; 
+// 			padding: 0 1%;
+// 			position: absolute;
+// 		}
+		
+// 		&::before {
+// 			transform: translateX(-125%);
+//  		}
+// 	}
+
+// 	&.emphasis {
+// 		@include markpro;
+// 		font-size: rem(26);
+// 		font-weight: 500;
+// 		font-style: normal;
+// 		font-stretch: normal;
+// 		line-height: 1.38;
+// 		letter-spacing: normal;
+// 	}
+
+// 	&.white {
+// 		color: $white;
+// 	}
+
+// }
+
+
+// @include breakpoint(md-down) {
+// 	/* max-width: em(1299) */
+	
+// 	p {
+// 		font-size: rem(16);
+		
+// 		&.caption {
+// 			font-size: rem(12);
+// 		}
+
+// 		&.emphasis {
+// 			font-size: rem(24);
+// 		}
+// 	}
+// }
+
+
+// @include breakpoint(sm-down) {
+// 	/* max-width: em(999) */
+	
+// 	p {
+// 		font-size: rem(14);
+		
+// 		&.caption {
+// 			font-size: rem(12);
+// 		}
+
+// 		&.emphasis {
+// 			font-size: rem(16);
+// 		}
+// 	}
+// }
